@@ -34,7 +34,6 @@ Processor Service
 ---
 
 ## Technology Stack
-
 - Kubernetes (kind)
 - Docker
 - Node.js
@@ -45,11 +44,10 @@ Processor Service
 ---
 
 ## Repository Structure
-
-agent/ -> File monitoring agent
-ingest-api/ -> Event ingestion API
-processor/ -> Event processing service
-k8s/ -> Kubernetes manifests
+agent/        -> File monitoring agent  
+ingest-api/   -> Event ingestion API  
+processor/    -> Event processing service  
+k8s/          -> Kubernetes manifests  
 
 ---
 

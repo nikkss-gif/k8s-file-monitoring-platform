@@ -1,5 +1,5 @@
-**Kubernetes File Monitoring Platform
-**
+**Kubernetes File Monitoring Platform**
+
 Overview
 --------
 This project is a Kubernetes-based file monitoring system that detects file system

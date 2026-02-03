@@ -1,4 +1,4 @@
-**Kubernetes File Monitoring Platform**
+# Kubernetes File Monitoring Platform
 
 Overview
 --------

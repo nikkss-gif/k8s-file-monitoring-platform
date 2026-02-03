@@ -1,0 +1,12 @@
+node_modules/
+.env
+*.log
+
+# Docker
+*.tar
+
+# OS
+.DS_Store
+
+# Kubernetes
+*.pem

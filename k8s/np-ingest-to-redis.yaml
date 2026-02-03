@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-ingest-to-redis
+  namespace: monitoring
+spec:
+  podSelector:
+    matchLabels:
+      app: redis
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: ingest-api
+    ports:
+    - protocol: TCP
+      port: 6379

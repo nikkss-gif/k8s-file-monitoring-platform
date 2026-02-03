@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: file-agent
+  namespace: monitoring
+spec:
+  selector:
+    matchLabels:
+      app: file-agent
+  template:
+    metadata:
+      labels:
+        app: file-agent
+    spec:
+      containers:
+      - name: file-agent
+        image: file-agent:1.0
+        volumeMounts:
+        - name: watch-volume
+          mountPath: /watch
+      volumes:
+      - name: watch-volume
+        emptyDir: {}

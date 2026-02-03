@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-agent-to-ingest
+  namespace: monitoring
+spec:
+  podSelector:
+    matchLabels:
+      app: ingest-api
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: file-agent
+    ports:
+    - protocol: TCP
+      port: 3000

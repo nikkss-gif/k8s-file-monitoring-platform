@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingest-api
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ingest-api
+  template:
+    metadata:
+      labels:
+        app: ingest-api
+    spec:
+      containers:
+      - name: ingest-api
+        image: ingest-api:1.0
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ingest-api
+  namespace: monitoring
+spec:
+  selector:
+    app: ingest-api
+  ports:
+  - port: 3000
+    targetPort: 3000
+
